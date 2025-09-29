@@ -2,8 +2,6 @@
 
 A modern mobile application for Restaurant, built with Next.js and Capacitor to deliver a seamless coffee shop experience on both web and mobile platforms.
 
-![Restaurant Banner](https://via.placeholder.com/1200x400/1a1a1a/ffffff?text=Restaurant)
-
 ## ✨ Features
 
 - **User Authentication** - Secure login system
@@ -57,6 +55,50 @@ A modern mobile application for Restaurant, built with Next.js and Capacitor to 
    npm install
    # or
    yarn install
+   ```
+
+### Project Setup After Download
+
+After cloning the repository, follow these steps to set up the project and generate necessary directories:
+
+1. **Install Dependencies** (creates `node_modules/`)
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+2. **Generate Next.js Build Files** (creates `.next/`)
+   ```bash
+   # For development
+   npm run dev
+   
+   # Or for production build
+   npm run build
+   ```
+
+3. **Set Up Mobile Platforms** (creates `android/` and/or `ios/`)
+   ```bash
+   # For Android
+   npx cap add android
+   npx cap sync android
+   
+   # For iOS (macOS only)
+   npx cap add ios
+   npx cap sync ios
+   ```
+
+4. **Run the Application**
+   ```bash
+   # Web development
+   npm run dev
+   
+   # Or for mobile development
+   # Android
+   npx cap open android
+   
+   # iOS (macOS only)
+   npx cap open ios
    ```
 
 ### Development
@@ -121,6 +163,35 @@ A modern mobile application for Restaurant, built with Next.js and Capacitor to 
    ```
 
 4. Build and run from Xcode
+
+## 🔄 Rebuilding Project Directories
+
+### Regenerating `node_modules/`
+```bash
+# Install all dependencies
+npm install
+# or
+yarn install
+```
+
+### Regenerating `.next/` (Next.js build folder)
+```bash
+# Development build
+npm run dev
+# or for production build
+npm run build
+```
+
+### Regenerating `android/` and `ios/` (Capacitor platforms)
+```bash
+# For Android
+npx cap add android
+npx cap sync android
+
+# For iOS (macOS only)
+npx cap add ios
+npx cap sync ios
+```
 
 ## 📂 Project Structure
 
