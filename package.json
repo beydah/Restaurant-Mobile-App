@@ -14,7 +14,7 @@
     "@capacitor/cli": "^7.4.2",
     "@capacitor/core": "^7.4.2",
     "@react-google-maps/api": "^2.19.3",
-    "next": "15.3.2",
+    "next": "15.4.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "recharts": "^3.0.2"
