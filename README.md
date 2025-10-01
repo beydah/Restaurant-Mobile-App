@@ -218,6 +218,7 @@ Restaurant-Mobile-App/
 Create a `.env.local` file in the root directory and add the following variables:
 
 ```env
+# example
 NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
 # Add other environment variables here
 ```
