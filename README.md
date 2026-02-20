@@ -84,6 +84,8 @@ npm run dev
     - **Organisms**: Complex sections composed of atoms (`F_Top_Nav`).
 3. **Commit Messages**: Follow [Conventional Commits](https://www.conventionalcommits.org/).
 
+See the full [Contribution Guide](CONTRIBUTING.md) for detailed standards.
+
 ---
 
 ## 📦 Roadmap
