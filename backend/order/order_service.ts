@@ -1,0 +1,1 @@
+import { MOCK_ORDERS } from '@/core/constants/product_data'; export const C_ORDER_SERVICE = { F_Get_Order_History: () => MOCK_ORDERS };

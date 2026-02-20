@@ -1,243 +1,109 @@
-# ☕ Restaurant Mobile Application
+# ☕ Coffee Mobile App - Enterprise Mobile Experience
 
-A modern mobile application for Restaurant, built with Next.js and Capacitor to deliver a seamless coffee shop experience on both web and mobile platforms.
+[![Production Build](https://img.shields.io/badge/Production%20Build-Passing-brightgreen)](file:///c:/Users/BEYDAH/Desktop/Code/Restaurant-Mobile-App/walkthrough.md)
+[![Architecture](https://img.shields.io/badge/Architecture-Regional%20Governance-blue)](#-architectural-overview)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-## ✨ Features
+An enterprise-grade, high-performance boutique coffee mobile application built with **Next.js 15**, **Capacitor 7**, and **Atomic Design** principles.
 
-- **User Authentication** - Secure login system
-- **Onboarding Flow** - Smooth introduction to the app
-- **Responsive Design** - Works on mobile and desktop
-- **Menu Browsing** - Explore our coffee selection
-- **Shopping Cart** - Easy order management
-- **Order Tracking** - Real-time order status updates
-- **Mobile Optimized** - Built with Capacitor for native mobile experience
+---
 
-## 🚀 Tech Stack
+## 🏗 Architectural Overview
 
-- **Frontend Framework**: Next.js 13+ (App Router)
-- **Mobile**: Capacitor
-- **Styling**: Tailwind CSS
-- **State Management**: React Context API
-- **Maps Integration**: Google Maps API
-- **Charts**: Recharts
-- **Type Safety**: TypeScript
+This project follows a **Modular Monolithic** structure with **Regional Governance** to ensure extreme scalability and maintainability.
 
-## 📱 Screens
+### Regional Registers
+| Region      | Purpose          | Governance                                        |
+| :---------- | :--------------- | :------------------------------------------------ |
+| `app/`      | Routing & Layout | Next.js App Router                                |
+| `frontend/` | UI Components    | Atomic Design (`atoms`, `molecules`, `organisms`) |
+| `backend/`  | Business Logic   | Modular Services (`auth`, `product`, `order`)     |
+| `core/`     | Cross-Cutting    | Shared Contexts, Constants, & Utilities           |
+| `configs/`  | System Level     | Env Validation & Project Settings                 |
 
-1. **Splash Screen**
-2. **Onboarding**
-3. **Login/Register**
-4. **Home**
-5. **Menu**
-6. **Cart**
-7. **Orders**
-8. **Profile**
+---
 
-## 🛠️ Prerequisites
+## 🏷 Naming & Governance
 
-- Node.js 18.0.0 or later
-- npm or yarn
-- Android Studio (for Android development)
-- Xcode (for iOS development, macOS only)
+We follow a strict, searchable, and professional naming convention to ensure code clarity.
+
+### Prefixes & Conventions
+| Category             | Convention        | Example                 |
+| :------------------- | :---------------- | :---------------------- |
+| **Files**            | `snake_case`      | `auth_service.ts`       |
+| **Components**       | `F_Pascal_Snake`  | `F_Login_Form`          |
+| **Props**            | `p_snake_case`    | `p_on_click_handler`    |
+| **Types/Interfaces** | `I_Pascal_Snake`  | `I_User_Profile`        |
+| **Services/Classes** | `C_UPPER_SNAKE`   | `C_AUTH_SERVICE`        |
+| **Variables/Flags**  | `snake_case_flag` | `is_authenticated_flag` |
+
+> [!IMPORTANT]
+> All imports must use the `@/` absolute alias. Files in `frontend/` cannot import directly from `backend/`; they must use `core/` bridges.
+
+---
+
+## 🛠 Tech Stack
+
+- **Framework**: [Next.js 15](https://nextjs.org/)
+- **Mobile Runtime**: [Capacitor 7](https://capacitorjs.com/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **State Management**: React Context + Modular Services
+- **Icons**: [Remix Icon](https://remixicon.com/)
+
+---
 
 ## 🚀 Getting Started
 
-### Installation
+### Prerequisites
+- Node.js 20+
+- npm 10+
+- Android Studio (for Android builds)
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/beydah/Restaurant-Mobile-App.git
-   cd Restaurant-Mobile-App
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-### Project Setup After Download
-
-After cloning the repository, follow these steps to set up the project and generate necessary directories:
-
-1. **Install Dependencies** (creates `node_modules/`)
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-2. **Generate Next.js Build Files** (creates `.next/`)
-   ```bash
-   # For development
-   npm run dev
-   
-   # Or for production build
-   npm run build
-   ```
-
-3. **Set Up Mobile Platforms** (creates `android/` and/or `ios/`)
-   ```bash
-   # For Android
-   npx cap add android
-   npx cap sync android
-   
-   # For iOS (macOS only)
-   npx cap add ios
-   npx cap sync ios
-   ```
-
-4. **Run the Application**
-   ```bash
-   # Web development
-   npm run dev
-   
-   # Or for mobile development
-   # Android
-   npx cap open android
-   
-   # iOS (macOS only)
-   npx cap open ios
-   ```
-
-### Development
-
-1. Start the development server:
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-
-2. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Building for Production
-
-1. Create a production build:
-   ```bash
-   npm run build
-   ```
-
-2. Export the static files:
-   ```bash
-   npm run export
-   ```
-
-### Mobile Development
-
-#### Android
-
-1. Add Android platform:
-   ```bash
-   npx cap add android
-   ```
-
-2. Copy web assets and sync with Capacitor:
-   ```bash
-   npx cap copy android
-   ```
-
-3. Open in Android Studio:
-   ```bash
-   npx cap open android
-   ```
-
-4. Build and run from Android Studio
-
-#### iOS (macOS only)
-
-1. Add iOS platform:
-   ```bash
-   npx cap add ios
-   ```
-
-2. Copy web assets and sync with Capacitor:
-   ```bash
-   npx cap copy ios
-   ```
-
-3. Open in Xcode:
-   ```bash
-   npx cap open ios
-   ```
-
-4. Build and run from Xcode
-
-## 🔄 Rebuilding Project Directories
-
-### Regenerating `node_modules/`
+### Installation & Setup
 ```bash
-# Install all dependencies
+# 1. Clone the repository
+git clone [repository-url]
+
+# 2. Install dependencies
 npm install
-# or
-yarn install
-```
 
-### Regenerating `.next/` (Next.js build folder)
-```bash
-# Development build
+# 3. Environment setup
+cp .env.example .env
+
+# 4. Run development server
 npm run dev
-# or for production build
-npm run build
 ```
 
-### Regenerating `android/` and `ios/` (Capacitor platforms)
-```bash
-# For Android
-npx cap add android
-npx cap sync android
+---
 
-# For iOS (macOS only)
-npx cap add ios
-npx cap sync ios
-```
+## 👷 Contribution Standards
 
-## 📂 Project Structure
+1. **Regional Governance**: Never cross boundaries. UI logic stays in `frontend/`, Business in `backend/`.
+2. **Atomic Design**: 
+    - **Atoms**: Stateless single-tag units (`F_Button`).
+    - **Organisms**: Complex sections composed of atoms (`F_Top_Nav`).
+3. **Commit Messages**: Follow [Conventional Commits](https://www.conventionalcommits.org/).
 
-```
-Restaurant-Mobile-App/
-├── app/                    # App router pages
-│   ├── cart/              # Shopping cart page
-│   ├── home/              # Home page
-│   ├── menu/              # Menu page
-│   └── orders/            # Orders page
-├── components/            # Reusable components
-│   ├── ui/                # UI components
-│   ├── BottomNav.tsx      # Bottom navigation
-│   ├── Login.tsx          # Login component
-│   ├── Onboarding.tsx     # Onboarding flow
-│   └── TopNav.tsx         # Top navigation
-├── public/                # Static files
-├── android/               # Android native code
-└── ios/                   # iOS native code (if exists)
-```
+---
 
-## 🔧 Environment Variables
+## 📦 Roadmap
 
-Create a `.env.local` file in the root directory and add the following variables:
+### 🟢 Quick Wins
+- [ ] Zod Env Validation
+- [ ] React Error Boundaries for specific content regions
+- [ ] Native Splash Synchronization
 
-```env
-# example
-NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
-# Add other environment variables here
-```
+### 🟡 Mid-Term
+- [ ] Real API Integration (Axios/Fetch)
+- [ ] TanStack Query Migration
+- [ ] Centralized UI Tokens
 
-## 🤝 Contributing
+### 🔴 Major Refactors
+- [ ] Monorepo Migration (Turborepo)
+- [ ] MSW Integration for offline dev
+- [ ] Storybook Deployment
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+---
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [Next.js](https://nextjs.org/)
-- [Capacitor](https://capacitorjs.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- All the amazing open-source libraries used in this project
+## ⚖️ License
+Distributed under the **MIT License**. See `LICENSE` for more information.

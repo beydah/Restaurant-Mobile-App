@@ -1,0 +1,1 @@
+export const C_AUTH_SERVICE = { F_Get_State: () => ({ user_data: null, is_authenticated_flag: false }), F_Login: (e) => ({ name: 'Test' }), F_Logout: () => {}, F_Complete_Onboarding: () => {} };

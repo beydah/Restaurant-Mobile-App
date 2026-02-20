@@ -1,0 +1,1 @@
+export const MOCK_ORDERS = [{ id: '1', total: 45.9, date: '20.02', time: '14:00' }];
